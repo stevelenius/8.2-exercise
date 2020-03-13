@@ -1,0 +1,42 @@
+<!-- index.html for 8.2-exercise (calculator) -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 8.2 Calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+<body>
+  <h3>Simple Calculator</h3>
+
+  <div id="calcApp">
+    <form>
+      <div>
+        <input id="firstnumber" name="firstnumber" v-model.number="firstNumber" type="number" placeholder="1st number">
+        &nbsp;
+        <select v-model="operation">
+          <option value="addition">+</option>
+          <option value="subtraction">-</option>
+          <option value="multiplication">&times;</option>
+          <option value="division">&divide;</option>
+        </select>
+        &nbsp;
+        <input v-model.number="secondNumber" type="number" placeholder="2nd number">
+      </div>
+      <button class="button" v-on:click="calculate(firstNumber, secondNumber)" type="button">Calculate</button>  
+    </form>
+
+    <div class="total">
+      Total: <strong>{{total}}</strong>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="8.2-exercise.js"></script>
+
+</body>
+</html>
